@@ -19,48 +19,58 @@
     <div class="flickity py-3 text-light">
       <div>
         <b-row class="my-5" >
-          <b-container>
+          <b-container fluid>
             <b-col cols="12">
               <client-only>
                 <flickity ref="flickity" :options="flickityOptions">
                   <div class="carousel-cell">
-                    <img class="my-3 rounded-circle" src="@/static/fullslide1-180x180.jpg" alt="">
-                    <h2>KONZEPTION & BERATUNG</h2>
-                    <p>
-                      Als Freelancer unterstütze ich Sie mit meiner langjährigen Erfahrung. Mit mir haben Sie einen Partner gefunden, der langfristig und lösungsorientiert denkt, um Projekte zukunftsfähig umzusetzen. Professionelle Website Beratung, Konzeption und Erstellung aus einer Hand!
-                    </p>
+                    <div style="min-height: 20rem">
+                      <img class="my-3 rounded-circle" src="@/static/fullslide1-180x180.jpg" alt="">
+                      <h2>KONZEPTION & BERATUNG</h2>
+                      <p>
+                        Als Freelancer unterstütze ich Sie mit meiner langjährigen Erfahrung. Mit mir haben Sie einen Partner gefunden, der langfristig und lösungsorientiert denkt, um Projekte zukunftsfähig umzusetzen. Professionelle Website Beratung, Konzeption und Erstellung aus einer Hand!
+                      </p>
+                    </div>
                   </div>
                   <div class="carousel-cell">
-                    <img class="my-3 rounded-circle" src="@/static/laptopmockup_sliderdy-180x180.jpg" alt="">
-                    <h2>PROGRAMMIERUNG/ENTWICKLUNG</h2>
-                    <p>
-                      Als erfahrener Webdesigner und Programmierer für Websites und Software, biete ich Ihnen auf Sie abgestimmte Programme und die Entwicklung von hochwertigen Projekten.
-                    </p>
-                    <p>Ich habe mich auf das CMS WordPress spezialisiert, welches Ihnen ermöglicht, selbst Änderungen an der Website und am Webdesign vor zu nehmen. Aber auch andere Lösungen sind möglich.</p>
+                    <div style="min-height: 20rem">
+                      <img class="my-3 rounded-circle" src="@/static/laptopmockup_sliderdy-180x180.jpg" alt="">
+                      <h2>PROGRAMMIERUNG/ENTWICKLUNG</h2>
+                      <p>
+                        Als erfahrener Webdesigner und Programmierer für Websites und Software, biete ich Ihnen auf Sie abgestimmte Programme und die Entwicklung von hochwertigen Projekten.
+                      </p>
+                      <p>Ich habe mich auf das CMS WordPress spezialisiert, welches Ihnen ermöglicht, selbst Änderungen an der Website und am Webdesign vor zu nehmen. Aber auch andere Lösungen sind möglich.</p>
+                    </div>
                   </div>
                   <div class="carousel-cell">
-                    <img class="my-3 rounded-circle" src="@/static/pexels-photo-326514-180x180.jpeg" alt="">
-                    <h2>WEBHOSTING</h2>
-                    <p>
-                      Meine Kunden profitieren nicht nur von meiner Erfahrung im Bereich Entwicklung und Webdesign. Meine Hosting-Leistungen ermöglichen es einen umfassenden Service zu bieten. Mit mir als Webdesigner für Ihre Website und als Webhosting Partner, bekommen sie alles aus einer Hand und haben eine Anlaufstelle für Ihr Internetauftritt
-                    </p>
+                    <div style="min-height: 20rem">
+                      <img class="my-3 rounded-circle" src="@/static/pexels-photo-326514-180x180.jpeg" alt="">
+                      <h2>WEBHOSTING</h2>
+                      <p>
+                        Meine Kunden profitieren nicht nur von meiner Erfahrung im Bereich Entwicklung und Webdesign. Meine Hosting-Leistungen ermöglichen es einen umfassenden Service zu bieten. Mit mir als Webdesigner für Ihre Website und als Webhosting Partner, bekommen sie alles aus einer Hand und haben eine Anlaufstelle für Ihr Internetauftritt
+                      </p>
+                    </div>
                   </div>
                   <div class="carousel-cell">
-                    <img class="my-3 rounded-circle" src="@/static/pexels-photo-326424-180x180.jpeg" alt="">
-                    <h2>SEO/SUCHMASCHINENOPTIMIERUNG</h2>
-                    <p>
-                      Als erfahrener SEO Spezialist, kümmere ich um die notwendigen Optimierungsarbeiten. Mit meiner individuellen Suchmaschinenoptimierung verbessern sich Ihre Besucher- und Umsatzzahlen ihrer Website.
-                    </p>
-                    <p>
-                      Damit Sie optimal mit den gewünschten Keywords, bei Google, Bing & Co gefunden werden muss Ihre Website optimal programmiert und optimiert sein.
-                    </p>
+                    <div style="min-height: 20rem">
+                      <img class="my-3 rounded-circle" src="@/static/pexels-photo-326424-180x180.jpeg" alt="">
+                      <h2>SEO/SUCHMASCHINENOPTIMIERUNG</h2>
+                      <p>
+                        Als erfahrener SEO Spezialist, kümmere ich um die notwendigen Optimierungsarbeiten. Mit meiner individuellen Suchmaschinenoptimierung verbessern sich Ihre Besucher- und Umsatzzahlen ihrer Website.
+                      </p>
+                      <p>
+                        Damit Sie optimal mit den gewünschten Keywords, bei Google, Bing & Co gefunden werden muss Ihre Website optimal programmiert und optimiert sein.
+                      </p>
+                    </div>
                   </div>
                   <div class="carousel-cell">
-                    <img class="my-3 rounded-circle" src="@/static/pexels-photo-251225-180x180.jpeg" alt="">
-                    <h2>WARTUNG & SERVICE</h2>
-                    <p>
-                      Ich möchte, dass meine Kunden langfristig mit der Zusammenarbeit zufrieden sind. Deshalb biete ich Ihnen meinen langfristigen Service an. Dabei bin ich stets verfügbar und sorge für einen reibungslosen Betrieb Ihrer Website und Projekte. Beauftragen Sie mich mit der Instandhaltung Ihrer Website, und Sie müssen sich keine Sorgen mehr über die Aktualisierung und den reibungslosen Betrieb mehr machen.
-                    </p>
+                    <div style="min-height: 20rem">
+                      <img class="my-3 rounded-circle" src="@/static/pexels-photo-251225-180x180.jpeg" alt="">
+                      <h2>WARTUNG & SERVICE</h2>
+                      <p>
+                        Ich möchte, dass meine Kunden langfristig mit der Zusammenarbeit zufrieden sind. Deshalb biete ich Ihnen meinen langfristigen Service an. Dabei bin ich stets verfügbar und sorge für einen reibungslosen Betrieb Ihrer Website und Projekte. Beauftragen Sie mich mit der Instandhaltung Ihrer Website, und Sie müssen sich keine Sorgen mehr über die Aktualisierung und den reibungslosen Betrieb mehr machen.
+                      </p>
+                    </div>
                   </div>
                 </flickity>
               </client-only>
@@ -111,10 +121,12 @@
 
   .carousel-cell {
     width: 100%;
-    height: 30rem;
-    margin-right: 10px;
-    border-radius: 5px;
+    height: auto;
     text-align: center;
+
+    h2 {
+      font-size: 1.5rem;
+    }
   }
 
 </style>

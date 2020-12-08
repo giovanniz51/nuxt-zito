@@ -38,14 +38,6 @@
         </b-row>
       </b-container>
     </div>
-    <cookie-law theme="dark-lime">
-      <div slot-scope="props" class="text-center" style="width:100%;">
-        <p>
-          Diese Website benutzt Cookies. Wenn du die Website weiter nutzt, gehen wir von deinem Einverständnis aus.
-        </p>
-         <button class="btn btn-primary" @click="props.accept"><span>OK</span></button>
-      </div>
-    </cookie-law>
   </div>
 </template>
 
