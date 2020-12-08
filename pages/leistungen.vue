@@ -24,7 +24,7 @@
               <client-only>
                 <flickity ref="flickity" :options="flickityOptions">
                   <div class="carousel-cell">
-                    <div style="min-height: 20rem">
+                    <div style="min-height: 30rem">
                       <img class="my-3 rounded-circle" src="@/static/fullslide1-180x180.jpg" alt="">
                       <h2>KONZEPTION & BERATUNG</h2>
                       <p>
@@ -33,7 +33,7 @@
                     </div>
                   </div>
                   <div class="carousel-cell">
-                    <div style="min-height: 20rem">
+                    <div style="min-height: 30rem">
                       <img class="my-3 rounded-circle" src="@/static/laptopmockup_sliderdy-180x180.jpg" alt="">
                       <h2>PROGRAMMIERUNG/ENTWICKLUNG</h2>
                       <p>
@@ -43,7 +43,7 @@
                     </div>
                   </div>
                   <div class="carousel-cell">
-                    <div style="min-height: 20rem">
+                    <div style="min-height: 30rem">
                       <img class="my-3 rounded-circle" src="@/static/pexels-photo-326514-180x180.jpeg" alt="">
                       <h2>WEBHOSTING</h2>
                       <p>
@@ -52,7 +52,7 @@
                     </div>
                   </div>
                   <div class="carousel-cell">
-                    <div style="min-height: 20rem">
+                    <div style="min-height: 30rem">
                       <img class="my-3 rounded-circle" src="@/static/pexels-photo-326424-180x180.jpeg" alt="">
                       <h2>SEO/SUCHMASCHINENOPTIMIERUNG</h2>
                       <p>
@@ -64,7 +64,7 @@
                     </div>
                   </div>
                   <div class="carousel-cell">
-                    <div style="min-height: 20rem">
+                    <div style="min-height: 30rem">
                       <img class="my-3 rounded-circle" src="@/static/pexels-photo-251225-180x180.jpeg" alt="">
                       <h2>WARTUNG & SERVICE</h2>
                       <p>
