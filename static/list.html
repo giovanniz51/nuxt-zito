@@ -1,0 +1,845 @@
+<!DOCTYPE html><html lang="de" dir="ltr" class="sid-plesk">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+    <meta name="forgery_protection_token" id="forgery_protection_token" content="056e3b5561b867f804a45266de7d47da">
+    <title>File Manager für zito-webdesign.de - Zito-WebDesign Hosting</title>    <link rel="shortcut icon" href="/favicon.ico?1499756438">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="/javascript/externals/plesk-ui-library/plesk-ui-library.css?1607420019">
+<link rel="stylesheet" href="/theme/css/main.css?1586349894">
+<link rel="stylesheet" href="/theme/css/icons.css?1586349894">
+<link rel="stylesheet" href="/theme/css/custom.css?1586349894">
+        <link href="/modules/letsencrypt/global.css?1606211572" media="screen" rel="stylesheet" type="text/css" >                                        <script type="text/javascript" src="/javascript/externals/prototype.js?1519907679"></script>
+<script type="text/javascript" src="/javascript/jsw.min.js?1607420019"></script>
+<script type="text/javascript" src="/javascript/externals/require.js?1519907679"></script>
+<script type="text/javascript">
+    //<!--
+    require.config({"waitSeconds":0,"baseUrl":"\/javascript\/","urlArgs":"17.8.11-94","paths":{"modules":"..\/modules","plesk-ui-library":"externals\/plesk-ui-library\/plesk-ui-library.min"}});    //-->
+</script>
+<script type="text/javascript" src="/javascript/common.js?1519907679"></script>
+<script type="text/javascript" src="/javascript/smb/smb.js?1607420020"></script>
+<script type="text/javascript" src="/javascript/externals/modernizr.js?1519907679"></script>
+<script type="text/javascript" src="/javascript/externals/svgxuse.min.js?1519907679"></script>
+<script type="text/javascript" src="/javascript/responsive.js?1519907679"></script>
+<script type="text/javascript" src="/javascript/smb/file-manager.js?1519907679"></script>
+<script type="text/javascript" src="/modules/letsencrypt/global.js?1606211572"></script>    <script type="text/javascript">
+    //<![CDATA[
+    Jsw.baseUrl = '/smb';
+    Jsw.skinUrl = '/theme/';
+    //]]>
+</script>
+
+
+    
+    <!-- extension include: catalog -->
+<script>
+//<![CDATA[
+Jsw.namespace('PleskExt.Catalog');
+//]]>
+</script>
+<link rel="stylesheet" href="/modules/catalog/styles/quick-access.css" />
+<!-- extension include: git -->
+<!-- extension include: heavy-metal-skin -->
+<!-- extension include: wp-toolkit -->
+<script>
+//<![CDATA[
+Jsw.namespace('PleskExt.WpToolkit');
+//]]>
+</script>
+
+
+<!-- extension include: letsencrypt -->
+<!-- extension include: notifier -->
+
+    </head>
+<body class="file-manager ">
+    <script type="text/javascript">
+        //<![CDATA[
+        (function() {
+            var inFrame = true;
+
+            try {
+                if (window.self === window.top) {
+                    inFrame = false
+                }
+            } catch (e) {
+            }
+
+            if (inFrame) {
+                $(document.body).addClassName('page-content-only');
+            }
+        })();
+        //]]>
+    </script>
+    <script type="text/javascript">
+                    $(document.body).addClassName('sid-frame');
+            $(document.body).addClassName('sid-frame-main');
+            $(document.body).addClassName('sid-main-embedded');
+        
+        if ($(document.body).hasClassName('sid-legacy')) {
+            $(document.body).addClassName('sid-main-legacy');
+        }
+    </script>
+            <script type="text/javascript">
+    //<![CDATA[
+    Jsw.onReady(function() {
+        new Jsw.Task.ProgressBar(Object.extend({
+            'id': 'asyncProgressBarWrapper',
+            'renderTo': document.body,
+        }, {"progressUrl":"\/smb\/task\/task-progress","removeUrl":"\/smb\/task\/task-remove","locale":{"hideCompletedTasks":"Abgeschlossene ausblenden","progressBarHide":"Ausblenden","progressBarShow":"Einblenden","cancel":"Abbrechen","close":"Schlie\u00dfen","refresh":"Seite aktualisieren","taskInProgress":"%%count%% Aufgaben werden bearbeitet...","percentCompleted":"%%percent%%% abgeschlossen","allTasksCompleted":"Alle Aufgaben (%%num%%) wurden erfolgreich fertiggestellt.","minimize":"Minimieren","statusDone":"Fertig","statusError":"Fehlgeschlagen","statusNotStarted":"In Warteschlange","statusCanceled":"Abgebrochen","progressDialogLink":"Details"},"hidden":null}));
+    });
+    //]]>
+</script>
+        <div class="page-container" id="page">
+                <div class="page-header-wrapper">
+            <div class="page-header">
+                <div id="cookie-policy"></div>
+<script>
+    (function() {
+        var isInfoEnabled = true;
+        var container = document.getElementById('cookie-policy');
+        var hasCookiePolicy = window.localStorage.getItem('cookie-policy') !== null;
+        if (isInfoEnabled && !hasCookiePolicy) {
+            container.setAttribute('class', 'cookie-policy-placeholder');
+        }
+        require(['app/cookie-policy'], function (cookiePolicy) {
+            cookiePolicy.default({
+                container: container,
+                layoutType: null,
+                locale: {"info":{"title":"Tell us whether you accept cookies","necessaryCookiesMessage":"By logging in to Plesk, you allow us to use necessary \u0441ookies.","message":"%%cookieInformationLink%% about how you use Plesk. It helps us to improve our services so that you could make the most out of Plesk.","cookieInformationLink":"Cookies collect information","acceptButton":"Accept all cookies","preferencesButton":"Set cookie preferences"},"preferences":{"title":"Cookies on Plesk","description":"Cookies are files saved on your phone, tablet, or computer when you visit Plesk. We use cookies to make Plesk work, to have it operate smoothly, and to collect certain information.","settingsTitle":"Cookie settings","settingsDescription":"We use 3 types of cookies. Enable those you allow us to use.","analyticsTitle":"Cookies that help us to improve the product","analyticsDescription":"We use anonymous tracking cookies to collect information on how you use Plesk. It helps us make Plesk better. Tracking cookies do not identify anyone. They store anonymized information about Plesk pages you visited, time your spent on them, and page objects you clicked on. We do not share the collected data with third-party services.","marketingTitle":"Cookies that help with our communications and marketing","marketingDescription":"These cookies collect information about your Plesk preferences and help us provide you with personal recommendations.","necessaryTitle":"Strictly necessary cookies","necessaryDescription":"These cookies enable Plesk core functions such as security, network management, and accessibility. These cookies always need to be on. Necessary cookies also include functional cookies that are in charge of personalization and usability improvements (for example, language settings, font size, and prefilled forms). You may disable necessary cookies in your %%browserSettingsLink%% but this may affect Plesk.","browserSettingsLink":"browser settings","pleskCookiesLink":"See the detailed description of the used cookies","on":"On","off":"Off","submitButton":"Save changes","cancelButton":"Cancel"}},
+                isInfoEnabled: isInfoEnabled,
+            });
+            container.removeAttribute('class');
+        });
+    })();
+</script>
+                <div id="license-status"></div>
+                                                    <div class="main-header-wrapper js-scrollbar-spacer">
+    <div class="main-header">
+        <div class="main-header-brand">
+            <span class="brand-name"><IMG src="/images/logos/logoImg-OCfKn6?1606083335" alt="Zito-WebDesign Hosting"></span>
+        </div>
+
+        
+        <div class="r-main-header-navbar">
+    <ul>
+                        <li class="r-top-user"><span></span></li>
+                                        <li class="r-top-help"><span></span></li>
+            </ul>
+</div>
+<div class="main-header-navbar">
+    <ul class="main-header-navbar-nav">
+        
+                <li class="top-user-info">
+            <div class="top-user-info-wrapper">
+                <div class="top-user-info-row top-user">
+                    <div class="top-user-info-name">Angemeldet als</div>
+                    <div class="top-user-info-data"></div>
+                </div>
+                            </div>
+        </li>
+        
+        
+                <li class="top-help">
+                    </li>
+        
+                    <li class="top-logo">
+                <a href="http://www.plesk.com" target="_blank">
+                    <img src="/theme/images/logos/powered-logo.png?1586349894"/>
+                </a>
+            </li>
+            </ul>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+Jsw.onReady(function() {
+                new Jsw.ResponsiveDropdown({
+        renderTo: $$('.top-user .top-user-info-data')[0],
+        id: 'account-menu',
+        items: [{"title":"Profil bearbeiten","href":"\/admin\/reseller\/personal-info\/","iconClass":"icon-profile"},{"title":"Abmelden","href":"\/logout.php","iconClass":"icon-logout","dataType":"link-logout"}],
+        title: '\x3Cb\x3EGiovanni Zito\x3C/b\x3E',
+        forceDropdown: true,
+        responsiveClass: 'r-top-user',
+        headerClass: 'main-header',
+        responsiveHeaderClass: 'r-show-main-header-navbar r-show-top-user'
+    });
+                var items =  [{"title":"Handbuch lesen","iconClass":"icon-manual","target":"_blank","dataType":"link-read-manual","href":"\/smb\/help\/redirect\/controller-name\/file-manager\/action-name\/list"},{"title":"Video-Tutorials ansehen","iconClass":"icon-video","href":"\/smb\/help\/tutorials\/"}];
+    items = items.map(function(item) {
+        if ('help' === item['value']) {
+            item['href'] = getHelpUrl();
+        }
+
+        return item;
+    });
+    new Jsw.ResponsiveDropdown({
+        renderTo: $$('.top-help')[0],
+        id: 'help-menu',
+        items: items,
+        title: '\x3Ci class="icon-top-help"\x3E\x3C/i\x3E Hilfe',
+        forceDropdown: true,
+        responsiveClass: 'r-top-help',
+        headerClass: 'main-header',
+        responsiveHeaderClass: 'r-show-main-header-navbar r-show-top-help'
+    });
+        
+    $$('.main-header-navbar-nav__item').each(function(item) {
+        let responsiveItem =  $('r-' + item.id);
+        if (item.getAttribute('data-description')) {
+            Jsw.Tooltip.init(item, {
+                text: item.getAttribute('data-description'),
+            });
+            responsiveItem && Jsw.Tooltip.init(responsiveItem, {
+                text: item.getAttribute('data-description'),
+            });
+        }
+        if (responsiveItem) {
+            let link = item.select('a').first();
+            responsiveItem.observe('click', function () {
+                Jsw.redirect(link.getAttribute('href'), {}, link.getAttribute('target'))
+            });
+        }
+    })
+});
+//]]>
+</script>
+    </div>
+</div>
+                            </div>
+        </div>
+                <div class="page-main-wrapper">
+            <div class="page-main">
+                                    <script>
+if (Jsw.Cookie.get('BarExpanded') === 'False') {
+    $$('body').first().addClassName('page-sidebar-closed');
+}
+
+if ($$('.r-main-header-navbar ul').first()) {
+    Jsw.render($$('.r-main-header-navbar ul').first(), Jsw.createElement('li.r-top-search', Jsw.createElement('span')));
+}
+</script>
+<div class="page-sidebar-wrapper">
+    <div class="page-sidebar">
+
+        <div class="page-sidebar-toggler-wrapper">
+            <div class="page-sidebar-toggler"></div>
+        </div>
+
+        <div class="page-sidebar-content">
+            <div class="page-sidebar-search-wrapper">
+                <div class="page-sidebar-search">
+                    <div class="form-group dropdown">
+    <input type="text" class="form-control" autocomplete="off" placeholder="Suchen..." id="searchTerm">
+    <span class="form-control-feedback icon-search"></span>
+    <ul class="dropdown-menu dropdown-icon-menu" id="searchResultsBlock"></ul>
+</div>
+<script>
+//<![CDATA[
+require(['app/search'], function (search) {
+    search(Object.extend({
+        searchTerm: $('searchTerm'),
+        iconState: $('searchTerm').next(),
+        searchResultsBlock: $('searchResultsBlock'),
+    }, {"actionUrl":"\/admin\/search\/results","skinUrl":"\/theme\/","locale":{"nothingFound":"Keine Ergebnisse gefunden.","moreResultsFound":"Es wurden mehr als 10 Ergebnisse gefunden. Bitte verfeinern Sie Ihre Suche."}}));
+});
+//]]>
+</script>
+                </div>
+            </div>
+
+            <div class="page-sidebar-menu-wrapper">
+                <a class="menu-toggler responsive-toggler" href="#">Menü</a>
+                <ul class="page-sidebar-menu"></ul>
+            </div>
+
+            <div class="page-sidebar-footer-wrapper">
+                <div class="page-sidebar-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+(function (navigation) {
+    var ce = Jsw.createElement;
+    var sidebarMenu = $$('.page-sidebar-menu').first();
+    Jsw.render(sidebarMenu, navigation.map(function (menuItem) {
+        var group = menuItem.id.toString().replace('_', '-');
+        return ce('li.menu-group-' + group + '.' + menuItem.status, [
+            menuItem.showTitle ? ce('a.menu-group-title', {
+                onrender: function (el) {
+                    el.observe('click', function (e) {
+                        e.stop();
+                        var liElement = el.up();
+                        liElement.toggleClassName('open').toggleClassName('close');
+                        var cookieName = liElement.className.split(' ').first();
+                        Jsw.Cookie.setPermanent(cookieName, liElement.hasClassName('close') ? '0' : '1', '/');
+                    });
+                },
+            }, [
+                ce('span.menu-group-toggle'),
+                ce('span.menu-group-name', menuItem.name.escapeHTML()),
+            ]) : null,
+            menuItem.nodes && Object.keys(menuItem.nodes).length ? ce('ul.sub-menu',
+                Object.values(menuItem.nodes).map(function (node) {
+                    var cls = ((!node.id && node.styleClass) || '') + ' ' + (node.active ? 'active' : '');
+                    return ce('li', {
+                        'id': node.id || false,
+                        'class': cls.trim() || false,
+                        'onrender': function (el) {
+                            Jsw.Tooltip.init(el, {
+                                text: node.conhelp.escapeHTML(),
+                            });
+                        },
+                    }, [
+                        ce('a', {
+                            href: Jsw.prepareUrl(node.link),
+                            target: node.target,
+                        }, [
+                            ce('i', {
+                                'class': node.styleClass && 'icon-' + node.styleClass.split(' ').first(),
+                                style: node.custom && "background-image: url('" + node.icon + "');",
+                            }),
+                            ce('span.title', node.name.toString().escapeHTML()),
+                        ]),
+                    ]);
+                })
+            ) : null,
+        ]);
+    }));
+})([{"name":"Navigation","nodes":{"home":{"name":"Start","conhelp":"Zur Startseite gehen..","styleClass":"nav-home","icon":"\/theme\/icons\/16\/plesk\/nav-home.png","link":"\/admin\/home?context=home","type":"link","enabled":true,"nav_title":"Minimieren\/Wiederherstellen","active":false}},"open":true,"id":"general","status":"open","showTitle":false},{"name":"Hosting-Services","nodes":{"customers":{"name":"Kunden","conhelp":"Verwalten Sie die Kundenkonten.","styleClass":"nav-clients","icon":"\/theme\/icons\/16\/plesk\/nav-clients.png","link":"\/admin\/customer\/list?context=customers","type":"link","enabled":true,"keywords":"hinzuf\u00fcgen erstellen neu entfernen aktiv aktivieren deaktivieren sperren ausw\u00e4hlen \u00e4ndern kunde name","nav_title":"Minimieren\/Wiederherstellen","active":false},"domains":{"name":"Domains","conhelp":"\u00dcberblicken Sie die Domains.","styleClass":"nav-domains","icon":"\/theme\/icons\/16\/plesk\/nav-domains.png","link":"\/admin\/domain\/list?context=domains","type":"link","enabled":true,"keywords":"aktiv aktivieren deaktivieren sperren anzeigen \u00f6ffnen name site website ausw\u00e4hlen \u00e4ndern verwalten hosting","nav_title":"Minimieren\/Wiederherstellen","active":false},"subscriptions":{"name":"Abonnements","conhelp":"Verwalten Sie die Service-Abonnements.","styleClass":"nav-subscriptions","icon":"\/theme\/icons\/16\/plesk\/nav-subscriptions.png","link":"\/admin\/subscription\/list?context=subscriptions","type":"link","enabled":true,"keywords":"hinzuf\u00fcgen erstellen neu entfernen aktiv aktivieren deaktivieren sperren synchronisieren nicht ressourcen regeln bereitstellen traffic \u00fcberbeanspruchung \u00fcberbuchung gew\u00e4hren berechtigung service business eigentum domain kunde plan \u00e4ndern verschieben","nav_title":"Minimieren\/Wiederherstellen","active":false},"service-plans":{"name":"Service-Pakete","conhelp":"Verwalten Sie die Hosting- und Reseller-Pakete.","styleClass":"nav-service-plans","icon":"\/theme\/icons\/16\/plesk\/nav-service-plans.png","link":"\/admin\/customer-service-plan\/list?context=service-plans","type":"link","enabled":true,"keywords":"addon add-on zus\u00e4tzlich ressourcen regeln richtlinien bereitstellen traffic \u00fcberbeanspruchung \u00fcberbuchung gew\u00e4hren berechtigung service business eigentum name kunde hinzuf\u00fcgen erstellen neu entfernen php einstellungen","nav_title":"Minimieren\/Wiederherstellen","active":false},"reseller-tools":{"name":"Tools & Dienstprogramme","conhelp":"Konfigurieren und verwalten Sie Services und lassen Sie Statistiken zum Ressourcenverbrauch anzeigen.","styleClass":"nav-tools","icon":"\/theme\/icons\/16\/plesk\/nav-tools.png","link":"\/admin\/reseller\/tools\/id\/11\/?context=reseller-tools","type":"link","enabled":true,"nav_title":"Minimieren\/Wiederherstellen","active":false},"extNavButton_wp-toolkit_1":{"id":"extNavButton-wp-toolkit-1","name":"WordPress","conhelp":"Alle verf\u00fcgbaren WordPress-Websites verwalten.","icon":"\/modules\/wp-toolkit\/images\/nav-wordpress-toolkit.svg","type":"link","link":"\/modules\/wp-toolkit\/index.php\/index\/index?context=extNavButton_wp-toolkit_1","order":"","enabled":true,"custom":true,"nav_title":"Minimieren\/Wiederherstellen","active":true,"styleClass":"nav-extNavButton-wp-toolkit-1"}},"open":true,"id":"hosting","status":"open","showTitle":true},{"name":"Mein Profil","nodes":{"personal-info":{"name":"Profil","conhelp":"Profilinformationen anzeigen und \u00e4ndern.","styleClass":"nav-personal-info","icon":"\/theme\/icons\/16\/plesk\/nav-personal-info.png","link":"\/admin\/reseller\/personal-info\/?context=personal-info","type":"link","enabled":true,"nav_title":"Minimieren\/Wiederherstellen","active":false},"credentials-info":{"name":"Passwort \u00e4ndern","conhelp":"\u00c4ndern Sie das Passwort f\u00fcr Ihr Konto.","styleClass":"nav-credentials-info","icon":"\/theme\/icons\/16\/plesk\/nav-credentials-info.png","link":"\/admin\/reseller\/login-info\/?context=credentials-info","type":"link","enabled":true,"keywords":"pers\u00f6nlich benutzername passwort mein login meine anmeldedaten","nav_title":"Minimieren\/Wiederherstellen","active":false},"interface-pref":{"name":"Einstellungen zur Benutzeroberfl\u00e4che","conhelp":"Aktualisieren Sie die Einstellungen zur Plesk Benutzeroberfl\u00e4che.","styleClass":"nav-interface-pref","icon":"\/theme\/icons\/16\/plesk\/nav-interface-pref.png","link":"\/admin\/reseller\/preferences\/?context=interface-pref","type":"link","enabled":true,"nav_title":"Minimieren\/Wiederherstellen","active":false}},"open":true,"id":"profile","status":"open","showTitle":true}]);
+
+$$('.page-sidebar-toggler-wrapper').each(function (el) {
+    el.observe('click', function (e) {
+        e.stop();
+        $$('body').first().toggleClassName('page-sidebar-closed');
+        Jsw.Cookie.set('BarExpanded', $$('body').first().hasClassName('page-sidebar-closed') ? 'False' : 'True', undefined, '/');
+    });
+});
+
+(function () {
+   var menuWrapper = $$('.page-sidebar-menu-wrapper').first();
+    menuWrapper.down('.menu-toggler').observe('click', function(event) {
+        Event.stop(event);
+        menuWrapper.toggleClassName('responsive-menu-visible');
+    });
+    menuWrapper.select('.sub-menu li a').each(function(el) {
+        el.observe('click', function() {
+            menuWrapper.toggleClassName('responsive-menu-visible');
+        });
+    });
+})();
+
+new Jsw.SearchResponsiveDropdown({
+    applyTo: $$('.page-sidebar-search-wrapper').first(),
+    responsiveClass: 'r-top-search',
+    headerClass: 'main-header',
+    responsiveHeaderClass: 'r-show-main-header-navbar r-show-top-search'
+});
+
+require(['app/view-switcher'], function (viewSwitcher) {
+    viewSwitcher(document.querySelector('.page-sidebar-footer'), {"isPowerUserPanel":false,"locale":{"title":"Ansicht \u00e4ndern","serviceProviderView":"Service-Provider-Ansicht","powerUserView":"Power-User-Ansicht","currentViewMessage":"Sie befinden sich aktuell in der %%view%%.","actionMessage":"%%switchLink%% oder %%helpLink%%.","switchView":"Schalten Sie in die %%view%%","learnMore":"erfahren Sie mehr \u00fcber die Darstellungsansichten","powerUserViewWarning":"In der Power-User-Ansicht k\u00f6nnen Sie nur Ihre eigenen Domains verwalten. Kunden, Reseller und deren Domains werden nicht angezeigt.","confirmationBoxText":"M\u00f6chten Sie das Men\u00fc zum \u00c4ndern der Ansicht wirklich ausblenden?","confirmationBoxDescription":"Beachten Sie, dass durch das Ausblenden des Men\u00fcs dieses permanent entfernt wird. Sie k\u00f6nnen dennoch zwischen den Ansichten wechseln \u00fcber Tools & Einstellungen > Verwaltung der Oberfl\u00e4che.","confirmationBoxButtonYes":"Ja","confirmationBoxButtonNo":"Nein","welcomePowerUser":"Wenn Sie mit dem Erstellen eines Kunden beginnen m\u00f6chten, %%action%%","welcomeProviderView":"Wenn Sie mit dem Erstellen einer Domain beginnen m\u00f6chten, %%action%%","welcomeSwitchView":"wechseln Sie in die %%view%%"},"showPowerUserViewWarning":true,"hideSwitcherUrl":"\/admin\/index\/hide-view-switcher","changeViewUrl":"\/admin\/index\/change-view","learnMoreUrl":"\/admin\/reseller\/preferences\/?context=reseller-tools","isWelcomeMode":false,"disableWelcomeModeUrl":"\/admin\/index\/disable-view-switcher-welcome-mode"});
+});
+</script>
+                                <script type="text/javascript">
+                    //<![CDATA[
+                    (function() {
+                        var pageHeaderWrapper = $$('.page-header-wrapper').first();
+                        var pageSidebarWrapper = $$('.page-sidebar-wrapper').first();
+
+                        function fixHeaderHeight() {
+                            var height = pageHeaderWrapper.down('.page-header').getHeight();
+                            pageHeaderWrapper.setStyle({height: height + 'px'});
+                            if (pageSidebarWrapper) {
+                                pageSidebarWrapper.setStyle({top: height + 'px'})
+                            }
+                        }
+
+                        if (pageHeaderWrapper) {
+                            fixHeaderHeight();
+                            Event.observe(window, 'resize', fixHeaderHeight);
+                        }
+                    })();
+                    //]]>
+                </script>
+                <div class="page-content-wrapper">
+                    <div class="page-content">
+
+    <div id="pathbar-wrapper"></div>
+
+<script type="text/javascript">
+//<![CDATA[
+new Jsw.Pathbar({
+    id: 'pathbar',
+    cls: 'pathbar clearfix',
+    renderTo: 'pathbar-wrapper',
+    items: [{"componentType":"Jsw.Pathbar.Item","title":"Start","href":"\/admin\/home"},{"componentType":"Jsw.Pathbar.Item","title":"Abonnements","href":"\/admin\/subscription\/list"}]});
+//]]>
+</script>
+
+    <div class="heading no-border">
+        <div class="heading-area">
+            <div class="toolbar">
+                            </div>
+                                        <h2><span>File Manager für <b><a href="/admin/subscription/overview/id/47">zito-webdesign.de</a></b> <span id="gen-id-58f4b9dede3ba873124cd8bbfb3bf3ca"></span><script type="text/javascript">
+    //<![CDATA[
+    Jsw.onReady(function() {
+        new Jsw.ObjectSwitcher({"locale":{"loading":"Lade...","nothingFound":"Keine \u00dcbereinstimmungen gefunden","moreObjectsAvailable":"Es sind %%count%% weitere Domains verf\u00fcgbar.","label":"Zu anderer Domain:","myObjectsLabel":"Weitere Domains von %%name%%:","otherObjectsLabel":"Domains anderer Abonnenten:","refineSearchMessage":"Bitte verfeinern Sie die Suchkriterien, um die Domains zu finden, nach denen Sie suchen, oder gehen Sie zur %%link%%.","listOfAllObjects":"Liste aller Domains","description":"W\u00e4hlen Sie eine andere Domain."},"limit":10,"itemUrlTemplate":"\/admin\/subscription\/login\/id\/%%siteId%%?pageUrl=\/smb\/file-manager\/list","owner":"Giovanni Zito","lookUpParams":{"isEnabled":true,"isMainDomain":true,"currentId":47},"dataUrl":"\/smb\/web\/domain-look-up","listUrl":"\/admin\/domain\/list","renderTo":"gen-id-58f4b9dede3ba873124cd8bbfb3bf3ca"});
+    });
+    //]]>
+</script></span></h2>
+                        
+        </div>
+    </div>
+
+
+<div class="b-content ">
+        <div class="b-content-wrap clearfix">
+        <div id="content-body" class="b-content-main">
+            <div id="main">
+<div id="fm" class="objects-management-box objects-management-box-collapsible fm clearfix">
+    <div id="objects-list" class="objects-list">
+        <div class="objects-content">
+            <div id="objects-list-content-area" class="objects-content-area">
+                <div id="fm-tree" class="tree"></div>
+            </div>
+        </div>
+    </div>
+    <div id="fm-frame-switcher" class="frame-switcher"><div class="frame-switcher-wrap"><span></span></div></div>
+    <div id="objects-details" class="objects-details">
+        <div id="objects-warnings" class="warning-block" style="display: none; "></div>
+        <div id="fm-content"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+Jsw.onReady(function() {
+
+    Smb.FileManager.initSidebarVisibility();
+
+    var copyMoveTreeConfig = {
+        applyTo: 'fm-modal-dialog-box-files-tree',
+        data: [{"name":".config","path":"\/.config","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":".node-gyp","path":"\/.node-gyp","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":".npm","path":"\/.npm","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":".rbenv","path":"\/.rbenv","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":".wp-cli","path":"\/.wp-cli","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":".wp-toolkit","path":"\/.wp-toolkit","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"bin","path":"\/bin","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"botoxbibel.de","path":"\/botoxbibel.de","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"cafe.zito-webdesign.de","path":"\/cafe.zito-webdesign.de","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"conf","path":"\/conf","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"conf-options","path":"\/conf-options","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"dev","path":"\/dev","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"error_docs","path":"\/error_docs","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"etc","path":"\/etc","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"httpdocs","path":"\/httpdocs","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"lib","path":"\/lib","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"lib64","path":"\/lib64","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"logs","path":"\/logs","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"luxuria.zito-webdesign.de","path":"\/luxuria.zito-webdesign.de","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"nuxt.zito-webdesign.de","path":"\/nuxt.zito-webdesign.de","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"tmp","path":"\/tmp","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"usr","path":"\/usr","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"var","path":"\/var","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"vue.zito-webdesign.de","path":"\/vue.zito-webdesign.de","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"wordpress-backups","path":"\/wordpress-backups","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"}],
+        dataUrl: '/file-manager/tree-data',
+        rootNodeTitle: 'Basisverzeichnis',
+        waitMessage: 'Bitte warten ...'    };
+
+    var filesList = new Smb.FileManager.Explorer({
+        applyTo: 'fm-content',
+        data: {"pager":{"pageCount":1,"itemCountPerPage":100000,"first":1,"current":1,"last":1,"pagesInRange":{"1":1},"firstPageInRange":1,"lastPageInRange":1,"currentItemCount":2,"totalItemCount":2,"firstItemNumber":1,"lastItemNumber":2},"state":{"sortField":"name","sortDirection":"up","currentPage":1,"itemsPerPage":100000,"searchFilters":[],"forceShowSearch":false,"currentDir":"wordpress-backups","currentDirReadonly":false},"data":[{"id":"..","name":"..","modificationTimestamp":1607372274,"modificationDate":"7. Dez. 2020 21:17:54","size":"","formatedSize":"","user":"zitog","group":"psaserv","filePerms":"rwx --x --- ","isDirectory":true,"type":0},{"id":"luxuria.zito-webdesign.de__2020-12-08T19_41_14%2B0100.zip","name":"luxuria.zito-webdesign.de__2020-12-08T19_41_14+0100.zip","modificationTimestamp":1607452879,"modificationDate":"8. Dez. 2020 19:41:19","size":"36794368","formatedSize":"35.1 MB","user":"zitog","group":"psacln","filePerms":"rw- --- --- ","type":12,"actions":[{"name":"extractArchive","default":true},"separator","download","separator","rename","permissions"]}],"locale":{"recordsTotal":"%%total%% Element(e) gesamt","pages":"Seiten","firstPage":"Erste","lastPage":"Letzte","numberOfItemPerPage":"Eintr\u00e4ge pro Seite","hideSearch":"Suche ausblenden","showSearch":"Suche anzeigen","buttonSearch":"Suchen","buttonResetSearch":"Suche zur\u00fccksetzen","noEntriesFound":"Keine Elemente gefunden.","itemsNotSelected":"W\u00e4hlen Sie zuerst Elemente aus.","messageBoxButtonYes":"Ja","messageBoxButtonNo":"Nein","messageBoxButtonOk":"OK","messageBoxButtonWait":"Bitte warten","allItems":"Alle","loadingTitle":"Bitte warten. Ladevorgang...","timeoutMessage":"Dieser Vorgang dauert zu lang. \u00dcberpr\u00fcfen Sie die Ergebnisse einigen Minuten."},"additional":{"controllerName":"file-manager","actionName":"list","operations":[]},"pathbar":{"id":"fm-pathbar-component","componentType":"Smb.FileManager.Pathbar","cls":"pathbar clearfix","items":[{"componentType":"Jsw.Pathbar.SimpleItem","title":"wordpress-backups"}],"locale":{"name":"Name","changeDate":"Ge\u00e4ndert","size":"Gr\u00f6\u00dfe","permissions":"Berechtigungen","user":"Benutzer","group":"Gruppe","buttonUploadFiles":"Hochladen","hintUploadFiles":"Laden Sie Dateien auf das aktuelle Verzeichnis hoch.","buttonDeleteFile":"Entfernen","hintDeleteFile":"Entfernen Sie ausgew\u00e4hlte Dateien.","buttonCopyFiles":"Kopieren","hintCopyFiles":"Kopieren Sie ausgew\u00e4hlte Dateien in ein anderes Verzeichnis.","buttonMoveFiles":"Verschieben","hintMoveFiles":"Verschieben Sie ausgew\u00e4hlte Dateien in ein anderes Verzeichnis.","buttonMoreActions":"Mehr","buttonCalculateSize":"Gr\u00f6\u00dfe berechnen","hintCalculateSize":"Berechnen Sie die Gesamtgr\u00f6\u00dfe von ausgew\u00e4hlten Dateien.","buttonChangeTimestamp":"Zeitstempel \u00e4ndern","hintChangeTimestamp":"\u00c4ndern Sie den Zeitstempel von ausgew\u00e4hlten Dateien.","buttonExtractArchive":"Dateien extrahieren","hintExtractArchive":"Extrahieren Sie Dateien aus ausgew\u00e4hlten Archiven in das aktuelle Verzeichnis.","buttonCreateArchive":"In Archiv packen","hintCreateArchive":"Packen Sie die ausgew\u00e4hlten Dateien zu einem Archiv.","buttonNewActions":"Neu","buttonNewFile":"Datei erstellen","hintNewFile":"Erstellen Sie eine Datei.","buttonNewDirectory":"Verzeichnis erstellen","hintNewDirectory":"Erstellen Sie ein Verzeichnis.","rootDirectory":"Basisverzeichnis","buttonView":"Einstellungen","hintView":"\u00c4ndern Sie die Einstellungen des File Managers.","confirmOnDelete":"M\u00f6chten Sie die ausgew\u00e4hlten Dateien und Verzeichnisse wirklich dauerhaft entfernen?","waitMessage":"Bitte warten ...","readonlyHint":"Dieses Verzeichnis ist schreibgesch\u00fctzt: Sie k\u00f6nnen keine Dateien oder Verzeichnisse darin erstellen.","directoryNotFound":"Das Verzeichnis %%directory%% kann nicht gefunden werden: %%error%%","symlinksOutOfWebspaceProhibited":"Symbolische Verkn\u00fcpfungen au\u00dferhalb des Webspace sind nicht zul\u00e4ssig %%symlink%%: %%error%%"}}},
+        dataUrl: '/file-manager/list-data',
+        pageable: false,
+        tree: {
+            id: 'fm-tree',
+            data: [{"name":".config","path":"\/.config","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":".node-gyp","path":"\/.node-gyp","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":".npm","path":"\/.npm","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":".rbenv","path":"\/.rbenv","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":".wp-cli","path":"\/.wp-cli","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":".wp-toolkit","path":"\/.wp-toolkit","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"bin","path":"\/bin","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"botoxbibel.de","path":"\/botoxbibel.de","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"cafe.zito-webdesign.de","path":"\/cafe.zito-webdesign.de","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"conf","path":"\/conf","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"conf-options","path":"\/conf-options","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"dev","path":"\/dev","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"error_docs","path":"\/error_docs","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"etc","path":"\/etc","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"httpdocs","path":"\/httpdocs","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"lib","path":"\/lib","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"lib64","path":"\/lib64","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"logs","path":"\/logs","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"luxuria.zito-webdesign.de","path":"\/luxuria.zito-webdesign.de","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"nuxt.zito-webdesign.de","path":"\/nuxt.zito-webdesign.de","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"tmp","path":"\/tmp","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"usr","path":"\/usr","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"var","path":"\/var","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"vue.zito-webdesign.de","path":"\/vue.zito-webdesign.de","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"},{"name":"wordpress-backups","path":"\/wordpress-backups","isDirectory":true,"type":"dir","icon":"\/icons\/16\/plesk\/file-folder.png"}],
+            dataUrl: '/file-manager/tree-data',
+            rootNodeTitle: 'Basisverzeichnis',
+            onNodeClick: function (directoryPath) {
+                Jsw.getComponent('fm-content').changeDirectory(directoryPath, true);
+            }
+        },
+        isDisabledItem: function(item) {
+            return ('..' == item.name);
+        },
+        onContentTableClick: function(event) {
+            var content = Jsw.getComponent('fm-content');
+            var dir = event.target.hasAttribute('data-dir') ? event.target : event.target.up('[data-dir]');
+            var file = event.target.hasAttribute('data-file') ? event.target : event.target.up('[data-file]');
+            if (dir) {
+                content.changeDirectory(dir.getAttribute('data-dir'));
+            } else
+            if (file) {
+                content.callDefaultItemAction(file.getAttribute('data-file'));
+            }
+        },
+        columns: [
+            Object.extend(Object.clone(Jsw.list.COLUMN_SELECTION), { cls: 'select first', headerCls: 'select first', hideDisabled: true }),
+            {
+                header: 'Name',
+                sortable: true,
+                dataIndex: 'name',
+                cls: 'js-file-name fm-file-name',
+                renderer: function(item) {
+                    var icon = '<i class="icon"><img src="' + getIcon(item) + '"></i> ';
+
+                    var linkStartTag = item.isDirectory
+                        ? '<a class="i-link fm-file-name-link" data-dir="' + Jsw.escapeAttribute(item.name) + '" href="#">'
+                        : '<a class="i-link fm-file-name-link" data-file="' + Jsw.escapeAttribute(item.id) + '" href="#">';
+
+                    var itemTitle = '' +
+                        linkStartTag +
+                            icon +
+                            '<span>' + item.name.escapeHTML() + '</span>' +
+                        '</a>';
+
+                    return itemTitle;
+                }
+            }, {
+                header: 'Geändert',
+                sortable: true,
+                dataIndex: 'modificationDate',
+                cls: 'minor number'
+            }, {
+                header: 'Größe',
+                sortable: true,
+                dataIndex: 'formatedSize',
+                cls: 't-r number js-file-size ',
+                headerCls: ''
+            },
+                        {
+                header: 'Berechtigungen',
+                sortable: false,
+                dataIndex: 'filePerms',
+                cls: 'nowrap',
+                renderer: function(item) {
+                    if (item.actions) {
+                        var actionInfo = Jsw.getComponent('fm-content').getActionByName(item, 'permissions');
+                        if (actionInfo) {
+                            return '<a href="' + Jsw.prepareUrl(actionInfo.href) + '">' + item.filePerms + '</a>';
+                        }
+                    }
+                    return item.filePerms;
+                },
+                isVisible: function() {
+                    return !Jsw.Cookie.get('fm-hidden-permissions-column');
+                }
+            }, {
+                header: 'Benutzer',
+                sortable: true,
+                dataIndex: 'user',
+                isVisible: function() {
+                    return !Jsw.Cookie.get('fm-hidden-user-column');
+                }
+            }, {
+                header: 'Gruppe',
+                sortable: true,
+                dataIndex: 'group',
+                cls: 'last',
+                headerCls: 'last',
+                isVisible: function() {
+                    return !Jsw.Cookie.get('fm-hidden-group-column');
+                }
+            },
+                        Jsw.list.COLUMN_ACTIONS
+        ],
+        itemActions: {
+            rename: function(item) {
+                Jsw.getComponent('fm-content').showPopup(Smb.FileManager.Rename, {
+                    id: 'fm-rename',
+                    renderTo: 'fm-modal-dialog-box-rename',
+                    cls: 'popup-panel',
+                    handlerUrl: Jsw.prepareUrl('/file-manager/rename'),
+                    locale: {"title":"Umbenennen","buttonOk":"OK","buttonCancel":"Abbrechen","waitButtonTitle":"Bitte warten","hint":"Sie sind dabei Folgendes umzubenennen: %%file%%","fileName":"Neuer Name","errorFileExists":"In diesem Verzeichnis ist bereits eine Datei oder ein Verzeichnis mit diesem Namen vorhanden.","actionSuccess":"Die Datei wurde umbenannt.","actionError":"%%file%% kann nicht umbenannt werden: %%reason%%","invalidSourceFileName":"Ung\u00fcltiger Originaldateiname.","invalidDestinationFileName":"Ung\u00fcltiger Dateiname."},
+                    itemId: item.id,
+                    fileName: item.name
+                });
+            },
+
+            extractArchive: function(item) {
+                Jsw.getComponent('fm-content').showPopup(Smb.FileManager.ExtractArchive, {
+                    id: 'fm-extract-archive',
+                    renderTo: 'fm-modal-dialog-box-extract-archive',
+                    cls: 'popup-panel',
+                    handlerUrl: Jsw.prepareUrl('/file-manager/extract-archive'),
+                    locale: {"title":"Dateien entpacken","buttonOk":"OK","buttonCancel":"Abbrechen","hintFile":"Ausgew\u00e4hltes Archiv: %%file%%","hintFiles":"%%number%% Archive ausgew\u00e4hlt.","destinationFolderHint":"Dateien in folgendem Verzeichnis entpacken:","actionSuccess":"Die Dateien aus den ausgew\u00e4hlten Archiven wurden erfolgreich entpackt.","actionError":"%%file%% kann nicht entpackt werden: %%reason%%","invalidSourceFileType":"Der Dateityp wird nicht unterst\u00fctzt. Nur ZIP-Archive sind zul\u00e4ssig.","overwriteExisting":"Vorhandene Dateien ersetzen"},
+                    titleCls: 'pp-archive-extract',
+                    fileName: item.id
+                });
+            },
+
+            logBrowser: function (item) {
+                var url = '/smb/log-file/browser/id/47/';
+                var currentDir = Jsw.getComponent('fm-content').getCurrentDir();
+                var logPath = encodeURIComponent(currentDir.replace(/\/?$/, '/')) + item.id;
+                url += "?file=" + logPath;
+                url += "&custom=true";
+                var returnUrl = '%2Fsmb%2Ffile-manager%2Flist';
+                url += "&returnUrl=" + returnUrl;
+                Jsw.redirect(url);
+            },
+
+            view: redirectAction.bind(null, 'show'),
+            textEdit: redirectAction.bind(null, 'edit'),
+            visualEdit: redirectAction.bind(null, 'wysiwyg'),
+            textCodeEditor: redirectAction.bind(null, 'code-editor'),
+            download: redirectAction.bind(null, 'download'),
+            permissions: redirectAction.bind(null, 'permissions')
+        },
+        operations: [{
+                id: 'upload-file-button',
+                componentType: 'Smb.FileManager.UploadButton',
+                title: 'Hochladen',
+                description: 'Laden Sie Dateien auf das aktuelle Verzeichnis hoch.',
+                addCls: 'sb-upload-file',
+                href: '#',
+                uploadPopupParams: {
+                    id: 'fm-upload',
+                    renderTo: 'fm-modal-dialog-box-upload',
+                    cls: 'popup-panel',
+                    handlerUrl: Jsw.prepareUrl('/file-manager/upload'),
+                    locale: {"title":"Dateien f\u00fcr Upload ausw\u00e4hlen","hint":"Dateien f\u00fcr Upload ausw\u00e4hlen","addFileItem":"Eine weitere Datei hinzuf\u00fcgen","removeFileItem":"Entfernen","buttonOk":"OK","buttonCancel":"Abbrechen","buttonCancelUploadClicked":"Wird abgebrochen...","buttonClose":"Schlie\u00dfen","buttonReplace":"Ersetzen","buttonSkip":"\u00dcberspringen","noFilesSelectedForUpload":"Keine Dateien ausgew\u00e4hlt. Zum Hochladen der Dateien m\u00fcssen Sie sie ausw\u00e4hlen.","uploadDialogTitle":"Dateien werden hochgeladen...","uploadDialogHint":"Bitte warten Sie bis die ausgew\u00e4hlten Dateien auf den Server geladen wurden.","replaceExistingFilesDialogHint":"Die folgenden Dateien existieren bereits in diesem Verzeichnis. M\u00f6chten Sie sie ersetzen?","statusNotStarted":"Nicht gestartet","statusUploading":"Upload-Vorgang...","statusCompleted":"Geschlossen","statusFailed":"Fehlgeschlagen","statusCanceled":"Abgebrochen","descriptionUploadProgress":"%%completed%% von %%total%% Dateien wurden hochgeladen","failed":"Einige Dateien wurden aufgrund eines Fehlers nicht hochgeladen. Die verbleibenden Dateien werden nicht hochgeladen.","errorDialogTitle":"Fehler","errorFileExists":"%%file%% existiert bereits","errorFileIsLarger":"Die Datei \"%%filename%%\" ist zu gro\u00df. Versuchen Sie, diese Datei via FTP hochzuladen.","uploadFinished":"%%completed%% Dateien wurden zu %%folder%% hochgeladen.","uploadFinishedSingleFile":"%%file%% wurde zu %%folder%% hochgeladen.","uploadFailedSingleFile":"%%file%% wurde nicht zu %%folder%% hochgeladen.","uploadFinishedNoFiles":"Es wurden keine Dateien hochgeladen.","uploadCanceled":"Der Upload wurde abgebrochen. %%completed%% Dateien wurden zu %%folder%% hochgeladen.","dragAndDropArea":"Zum Hochladen Dateien hier hinziehen","totalProgressText":"%%percent%% abgeschlossen","progressText":"%%loaded%% von %%total%%","bytes":"B","kbytes":"KB","mbytes":"MB","gbytes":"GB"},
+                    uploadMaxFileSize: 268434407299,
+                    titleCls: 'pp-upload'
+                }
+            }, {
+                componentType: 'Jsw.list.AdditionalActions',
+                title: 'Neu',
+                titleAddCls: 'sb-add-new',
+                href: '#',
+                operations: [{
+                        componentType: 'Jsw.SmallButton',
+                        title: 'Datei erstellen',
+                        description: 'Erstellen Sie eine Datei.',
+                        addCls: 'sb-add-file',
+                        cls: 'sb-btn',
+                        href: '#',
+                        handler: function() {
+                            Jsw.getComponent('fm-content').showPopup(Smb.FileManager.CreateFile, {
+                                id: 'fm-create-file',
+                                renderTo: 'fm-modal-dialog-box-create-file',
+                                cls: 'popup-panel',
+                                handlerUrl: Jsw.prepareUrl('/file-manager/create-file'),
+                                locale: {"title":"Datei erstellen","hint":"Eine Datei hinzuf\u00fcgen zu: %%folder%%","fileName":"Dateiname","htmlTemplate":"Das HTML-Template benutzen","htmlTemplateHint":"Erstellen Sie eine leere HTML-Seite.","buttonOk":"OK","buttonCancel":"Abbrechen","waitButtonTitle":"Bitte warten","errorEmptyFileName":"Geben Sie einen Dateinamen ein.","errorFileExists":"Eine Datei oder ein Verzeichnis mit diesem Namen ist bereits vorhanden. W\u00e4hlen Sie einen anderen Namen aus.","actionError":"%%file%% kann nicht erstellt werden: %%reason%%","fileCreated":"%%file%% wurde erfolgreich erstellt."},
+                                titleCls: 'pp-add-file'
+                            });
+                        }
+                    }, {
+                        componentType: 'Jsw.SmallButton',
+                        title: 'Verzeichnis erstellen',
+                        description: 'Erstellen Sie ein Verzeichnis.',
+                        addCls: 'sb-add-folder',
+                        cls: 'sb-btn',
+                        href: '#',
+                        handler: function() {
+                            Jsw.getComponent('fm-content').showPopup(Smb.FileManager.CreateFolder, {
+                                id: 'fm-create-directory',
+                                renderTo: 'fm-modal-dialog-box-create-directory',
+                                cls: 'popup-panel',
+                                handlerUrl: Jsw.prepareUrl('/file-manager/create-directory'),
+                                locale: {"title":"Verzeichnis erstellen","hint":"Ein Verzeichnis hinzuf\u00fcgen zu: %%folder%%","folderName":"Verzeichnisname","buttonOk":"OK","buttonCancel":"Abbrechen","waitButtonTitle":"Bitte warten","errorEmptyDirectoryName":"Geben Sie einen Verzeichnisnamen ein.","errorDirectoryExists":"Ein Verzeichnis mit diesem Namen ist bereits vorhanden. W\u00e4hlen Sie einen anderen Namen aus.","actionError":"Das Verzeichnis %%directory%% kann nicht erstellt werden: %%reason%%","folderCreated":"Das Verzeichnis %%folder%% wurde erfolgreich erstellt."},
+                                titleCls: 'pp-add-folder'
+                            });
+                        }
+                    }
+                ]
+            }, {
+                componentType: 'Jsw.bar.Separator'
+            }, {
+                componentType: 'Jsw.SmallButton',
+                title: 'Kopieren',
+                description: 'Kopieren Sie ausgewählte Dateien in ein anderes Verzeichnis.',
+                addCls: 'sb-copy',
+                href: '#',
+                handler: function() {
+                    Jsw.getComponent('fm-content').hasSelectedItems(function() {
+                        this.showPopup(Smb.FileManager.CopyFiles, {
+                            id: 'fm-copy-files',
+                            renderTo: 'fm-modal-dialog-box-copy-files',
+                            cls: 'popup-panel',
+                            handlerUrl: Jsw.prepareUrl('/file-manager/copy-files'),
+                            locale: {"title":"Dateien kopieren","buttonOk":"OK","buttonCancel":"Abbrechen","hintFile":"Sie sind dabei Folgendes zu kopieren: %%file%%","hintFiles":"Sie sind dabei %%number%% Datei(en)\/Verzeichnis(se) zu kopieren.","destinationFolderHint":"In folgendes Verzeichnis kopieren:","overwriteExisting":"Vorhandene Dateien ersetzen","errorFileExists":"Im Zielverzeichnis ist bereits eine Datei oder ein Verzeichnis mit diesem Namen vorhanden.","actionSuccess":"Die ausgew\u00e4hlten Dateien und Verzeichnisse wurden erfolgreich kopiert.","actionError":"%%file%% kann nicht kopiert werden: %%reason%%","invalidSourceFileName":"Ung\u00fcltiger Originaldateiname.","invalidDestinationFileName":"Ung\u00fcltiger Dateiname.","destinationRequired":"Zielverzeichnis ist nicht definiert."},
+                            titleCls: 'pp-copy',
+                            tree: copyMoveTreeConfig
+                        });
+                    });
+                }
+            }, {
+                componentType: 'Jsw.SmallButton',
+                title: 'Verschieben',
+                description: 'Verschieben Sie ausgewählte Dateien in ein anderes Verzeichnis.',
+                addCls: 'sb-move',
+                href: '#',
+                handler: function() {
+                    Jsw.getComponent('fm-content').hasSelectedItems(function() {
+                        this.showPopup(Smb.FileManager.MoveFiles, {
+                            id: 'fm-move-files',
+                            renderTo: 'fm-modal-dialog-box-move-files',
+                            cls: 'popup-panel',
+                            handlerUrl: Jsw.prepareUrl('/file-manager/move-files'),
+                            locale: {"title":"Dateien verschieben","buttonOk":"OK","buttonCancel":"Abbrechen","hintFile":"Sie sind dabei Folgendes zu verschieben: %%file%%","hintFiles":"Sie sind dabei %%number%% Datei(en)\/Verzeichnis(se) zu verschieben.","destinationFolderHint":"In folgendes Verzeichnis verschieben:","overwriteExisting":"Vorhandene Dateien ersetzen","errorFileExists":"Im Zielverzeichnis ist bereits eine Datei oder ein Verzeichnis mit diesem Namen vorhanden.","actionSuccess":"Die ausgew\u00e4hlten Dateien und Verzeichnisse wurden erfolgreich verschoben.","actionError":"%%file%% kann nicht verschoben werden: %%reason%%","invalidSourceFileName":"Ung\u00fcltiger Originaldateiname.","invalidDestinationFileName":"Ung\u00fcltiger Dateiname.","destinationRequired":"Zielverzeichnis ist nicht definiert."},
+                            titleCls: 'pp-move',
+                            tree: copyMoveTreeConfig
+                        });
+                    });
+                }
+            }, {
+                componentType: 'Jsw.bar.Separator'
+            }, {
+                componentType: 'Jsw.SmallButton',
+                id: 'buttonDeleteFile',
+                title: 'Entfernen',
+                description: 'Entfernen Sie ausgewählte Dateien.',
+                addCls: 'sb-remove-selected',
+                href: '#',
+                handler: function(event) {
+                    filesList.deleteFile({
+                        mouseEvent: event,
+                        locale: {
+                            confirmOnGroupOperation: 'Möchten Sie die ausgewählten Dateien und Verzeichnisse wirklich dauerhaft entfernen?'                        }
+                    });
+                }
+            }, {
+                componentType: 'Jsw.bar.Separator'
+            }, {
+                componentType: 'Jsw.SmallButton',
+                title: 'Dateien extrahieren',
+                description: 'Extrahieren Sie Dateien aus ausgewählten Archiven in das aktuelle Verzeichnis.',
+                addCls: 'sb-archive-extract',
+                href: '#',
+                handler: function() {
+                    Jsw.getComponent('fm-content').hasSelectedItems(function() {
+                        this.showPopup(Smb.FileManager.ExtractArchive, {
+                            id: 'fm-extract-archive',
+                            renderTo: 'fm-modal-dialog-box-extract-archive',
+                            cls: 'popup-panel',
+                            handlerUrl: Jsw.prepareUrl('/file-manager/extract-archive'),
+                            locale: {"title":"Dateien entpacken","buttonOk":"OK","buttonCancel":"Abbrechen","hintFile":"Ausgew\u00e4hltes Archiv: %%file%%","hintFiles":"%%number%% Archive ausgew\u00e4hlt.","destinationFolderHint":"Dateien in folgendem Verzeichnis entpacken:","actionSuccess":"Die Dateien aus den ausgew\u00e4hlten Archiven wurden erfolgreich entpackt.","actionError":"%%file%% kann nicht entpackt werden: %%reason%%","invalidSourceFileType":"Der Dateityp wird nicht unterst\u00fctzt. Nur ZIP-Archive sind zul\u00e4ssig.","overwriteExisting":"Vorhandene Dateien ersetzen"},
+                            titleCls: 'pp-archive-extract'
+                        });
+                    });
+                }
+            }, {
+                componentType: 'Jsw.SmallButton',
+                title: 'In Archiv packen',
+                description: 'Packen Sie die ausgewählten Dateien zu einem Archiv.',
+                addCls: 'sb-archive-create',
+                href: '#',
+                handler: function() {
+                    Jsw.getComponent('fm-content').hasSelectedItems(function() {
+                        this.showPopup(Smb.FileManager.CreateArchive, {
+                            id: 'fm-create-archive',
+                            renderTo: 'fm-modal-dialog-box-create-archive',
+                            cls: 'popup-panel',
+                            handlerUrl: Jsw.prepareUrl('/file-manager/create-archive'),
+                            locale: {"title":"Dateien zum Archiv hinzuf\u00fcgen","hint":"Der Pfad zur Archivdatei: %%folder%%","archiveName":"Name der Archivdatei","buttonOk":"OK","buttonCancel":"Abbrechen","waitButtonTitle":"Bitte warten","errorEmptyArchiveName":"Geben Sie einen Namen f\u00fcr die Archivdatei ein.","errorEmptySelection":"Keine Datei(en) ausgew\u00e4hlt.","errorArchiveExists":"Es existiert bereits ein Archiv mit diesem Dateinamen.","archiveCreated":"%%archive%% wurde erfolgreich erstellt.","actionError":"Das Archiv kann nicht erstellt werden: %%reason%%."},
+                            titleCls: 'pp-archive-create'
+                        });
+                    });
+                }
+            }, {
+                componentType: 'Jsw.bar.Separator'
+            }, {
+                componentType: 'Jsw.list.AdditionalActions',
+                title: 'Mehr',
+                operations: [{
+                        componentType: 'Jsw.SmallButton',
+                        title: 'Größe berechnen',
+                        description: 'Berechnen Sie die Gesamtgröße von ausgewählten Dateien.',
+                        addCls: 'sb-calculate',
+                        cls: 'sb-btn',
+                        href: '#',
+                        handler: function() {
+                            filesList.calculateSize();
+                        }
+                    }, {
+                        componentType: 'Jsw.SmallButton',
+                        title: 'Zeitstempel ändern',
+                        description: 'Ändern Sie den Zeitstempel von ausgewählten Dateien.',
+                        addCls: 'sb-change-time',
+                        cls: 'sb-btn',
+                        href: '#',
+                        handler: function() {
+                            filesList.changeTimestamp();
+                        }
+                    }
+                ]
+            }, {
+                componentType: 'Jsw.SmallButton',
+                id: 'buttonView',
+                title: 'Einstellungen',
+                description: 'Ändern Sie die Einstellungen des File Managers.',
+                addCls: 'sb-settings',
+                handler: function() {
+                    Jsw.getComponent('fm-content').showPopup(Smb.FileManager.ViewSettings, {
+                        id: 'fm-settings',
+                        renderTo: 'fm-modal-dialog-box-settings',
+                        cls: 'popup-panel',
+                        handlerUrl: Jsw.prepareUrl('/file-manager/view-settings'),
+                        locale: {"title":"File-Manager-Einstellungen","hint":"Hier k\u00f6nnen Sie das Layout des File Managers \u00e4ndern sowie einstellen, wie der Inhalt in Ihren Verzeichnissen angezeigt wird.","folderTree":"Navigationsbereich einblenden","previewPanel":"Vorschau anzeigen","showAdvanced":"Erweiterte Einstellungen einblenden","hideAdvanced":"Erweiterte Einstellungen ausblenden","systemFiles":"Systemdateien und -verzeichnisse anzeigen","permissions":"Berechtigungen anzeigen","userAndGroup":"Nutzer und Gruppen anzeigen","buttonOk":"OK","buttonCancel":"Abbrechen","waitButtonTitle":"Bitte warten","actionError":"Ansichtseinstellungen k\u00f6nnen nicht aktualisiert werden: %%reason%%","actionSuccess":"Ansichtseinstellungen wurden erfolgreich aktualisiert."},
+                        settings: {
+                            folderTree: true,
+                            previewPanel: false, // :TODO: not implemented
+                            systemFiles: true,
+                            permissions: true,
+                            userAndGroup: true                        }
+                    });
+                }
+            }
+        ],
+        locale: {"item-action-view":"Anzeigen","item-action-textCodeEditor":"Im Code-Editor bearbeiten","item-action-visualEdit":"Im HTML-Editor bearbeiten","item-action-textEdit":"Im Texteditor bearbeiten","item-action-browse":"Im Browser \u00f6ffnen","item-action-logBrowser":"Im Protokollbrowser \u00f6ffnen","item-action-download":"Herunterladen","item-action-permissions":"Berechtigungen \u00e4ndern","item-action-rename":"Umbenennen","item-action-extractArchive":"Dateien extrahieren"}    });
+
+    function redirectAction(action, item) {
+        var url = '/smb/file-manager/' + action;
+        url += '?currentDir=' + encodeURIComponent(Jsw.getComponent('fm-content').getCurrentDir());
+        url += '&file=' + item.id;
+        Jsw.redirect(url);
+    }
+
+    function getIcon(item) {
+        var icons = ["\/theme\/icons\/16\/plesk\/uplevel.png?1586349894","\/theme\/icons\/16\/plesk\/file-folder.png?1586349894","\/theme\/icons\/16\/plesk\/file-txt.png?1586349894","\/theme\/icons\/16\/plesk\/file-image.png?1586349894","\/theme\/icons\/16\/plesk\/file-audio.png?1586349894","\/theme\/icons\/16\/plesk\/file-private.png?1586349894","\/theme\/icons\/16\/plesk\/file-webscript.png?1586349894","\/theme\/icons\/16\/plesk\/file-html.png?1586349894","\/theme\/icons\/16\/plesk\/file-html.png?1586349894","\/theme\/icons\/16\/plesk\/file-arch.png?1586349894","\/theme\/icons\/16\/plesk\/file-txt.png?1586349894","\/theme\/icons\/16\/plesk\/file-binary.png?1586349894","\/theme\/icons\/16\/plesk\/file-arch.png?1586349894"];
+        var defaultType = '11';
+        if (icons[item.type]) {
+            return icons[item.type];
+        }
+        return icons[defaultType];
+    }
+
+    Event.observe( window, 'resize', function() {
+        Smb.FileManager.resizeBlocks();
+    }, false);
+
+    // black magic (fix glitches after the first rendering)
+    Smb.FileManager.resizeBlocks();
+    Smb.FileManager.resizeBlocks();
+});
+//]]>
+</script>
+            </div> <!-- /main -->
+        </div> <!-- /b-content-main -->
+            </div> <!-- /b-content-wrap -->
+</div> <!-- /b-content -->
+                    </div> <!-- /page-content -->
+                </div> <!-- /page-content-wrapper -->
+            </div> <!-- /page-main -->
+        </div> <!-- /page-main-wrapper -->
+                                <div class="page-footer-wrapper">
+            <div class="page-footer">
+                <a href="https://www.plesk.com/" target="_blank">plesk.com</a>
+                                                                                    <div class="feedback-actions">
+                        <a class="s-btn sb-feedback" href="http://plesk.uservoice.com" target="_blank">
+                            <span>Feature vorschlagen</span>
+                        </a>
+                    </div>
+                                <div class="feedback-actions">
+                    <a data-type="cookie-policy-preferences-toggle">
+                        <span>Cookies</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+            </div> <!-- /page-container -->
+        <div id="plesk-ext-catalog-quick-access-wrapper"></div>
+<script>
+(function() {
+    var menu = document.getElementById('extNavButton-catalog-1');
+
+    if (!menu || menu.offsetWidth <= 0 || menu.offsetHeight <= 0) {
+        return;
+    }
+
+    var props = {"locale":{"categories":{"appearance":"Erscheinungsbild","auth":"Authentifizierung","backup":"Backup","beta":"Beta","client_tool":"Client-Tools","clouds":"Clouds","developer":"Webentwicklung","dns":"DNS","example":"Beispiele","feature_pack":"Funktionspakete","fun":"Vergn\u00fcgen","help":"Hilfe und Probleml\u00f6sung","mail":"E-Mail","monitoring":"\u00dcberwachung","performance":"Leistungsoptimierung f\u00fcr Websites","security":"Sicherheit","server_tool":"Servertools","social":"SEO und soziale Medien","web_app":"Bearbeitung von Web-Apps und Websites","webserver":"Webserver"},"quick-access":{"open":"Meine Erweiterungen \u00f6ffnen:","manage":"Meine Erweiterungen verwalten","try":"Hier finden Sie noch mehr Erweiterungen, die Sie ausprobieren k\u00f6nnen:","more":"Weitere Erweiterungen im Katalog>>","customize":"Anpassen"}},"isRtl":false,"baseUrl":"\/modules\/catalog\/index.php","context":"extNavButton_catalog_1","foldableSidebar":false};
+    props.menuItem = menu;
+
+    require(['/modules/catalog/javascript/quick-access.js?1.13.3'], function (main) {
+        main.default(
+            props,
+            document.getElementById('plesk-ext-catalog-quick-access-wrapper')
+        );
+    });
+})();
+</script>
+    <div id="bottomAnchor" style="position: fixed; top: 0; z-index: -1; opacity: 0.001;"></div>
+</body>
+</html>
